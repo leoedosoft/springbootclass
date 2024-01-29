@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity5">
+<head>
+<div th:replace="fragments/head :: myHead"></div>
+<script type="text/javascript" charset="utf8" th:src="@{/assets/js/jquery.min.js}"></script>
+<script type="text/javascript" charset="utf8" th:src="@{/assets/js/bootstrap.bundle.min.js}"></script>
+<script th:inline="javascript">
+</script>
+</head>
+<body>
+    <!-- Header -->
+    <div th:replace="fragments/header :: myHeader"></div>
+    <!-- Close Header -->
+    <!-- Start EDIT user -->
+    <section class="container py-5">
+        <h1 class="col-12 col-xl-8 h2 text-left text-primary pt-3">[[#{blogapp.msg.user.edit.title}]]</h1>
+           <div class="row pb-4">
+            <!-- Start Contact Form -->
+            <div class="col-lg-8 ">
+                <form class="contact-form row" method="post" action="#" th:action="@{/saveUser}" th:object="${user}" role="multipart/form-data" >
+                	
+                	<input type="hidden" th:field="*{roles}" />
+                	<!-- <input type="hidden" name="roles" th:value="${user.roles}">-->
+                	<!-- IDUSER NONE-->
+                	<div class="col-12 d-none">
+                        <div class="form-floating mb-4">
+                            <input type="text" class="form-control form-control-lg light-300" id="floatingsubject" name="inputsubject" placeholder="Subject" th:field="*{iduser}" readonly="readonly">
+                            <label for="floatingsubject light-300">IDUSER</label>
+                        </div>
+                    </div>
+                    <!-- PASSWORD NONE-->
+                	<div class="col-12 d-none">
+                        <div class="form-floating mb-4">
+                            <input type="text" class="form-control form-control-lg light-300" id="floatingsubject" name="inputsubject" placeholder="Subject" th:field="*{password}" readonly="readonly">
+                            <label for="floatingsubject light-300">PASS</label>
+                        </div>
+                    </div>	
+                    <!-- USERNAME -->
+                    <div class="col-6">
+                        <div class="form-floating mb-4">
+                            <input type="text" class="form-control form-control-lg light-300" id="mail" name="mail" placeholder="Subject" th:field="*{mail}">
+                            <label for="floatingsubject light-300">[[#{blogapp.msg.user.edit.label.username}]]</label>
+                            <small class="form-text text-danger" th:if="${#fields.hasErrors('mail')}" th:errors="*{mail}"></small>
+                        </div>
+                    </div>
+                    <!-- ROLE -->
+                    <div class="col-6">
+                        <div class="form-floating">
+						    <select class="form-select form-select-sm" aria-label=".form-select-sm example" th:field="*{typeRole}">
+					            <option th:each="role : ${selectRoles}"
+					                    th:text="${role}"
+						                th:value="${role}">
+						    </select>
+                        </div>
+                    </div>
+			        <!-- NAME -->
+                    <div class="col-6">
+                        <div class="form-floating">
+                            <input type="text" class="form-control form-control-lg light-300" id="name" name="name" placeholder="Cognome" th:field="*{name}">
+                            <label for="floatingname light-300">[[#{blogapp.msg.user.edit.label.name}]]</label>
+                            <small class="form-text text-danger" th:if="${#fields.hasErrors('name')}" th:errors="*{name}"></small>
+                        </div>
+                    </div>
+					<!-- SURNAME -->
+                    <div class="col-6">
+                        <div class="form-floating">
+                            <input type="text" class="form-control form-control-lg light-300" id="surname" name="surname" placeholder="Email" th:field="*{surname}">
+                            <label for="floatingemail light-300">[[#{blogapp.msg.user.edit.label.surname}]]</label>
+                            <small class="form-text text-danger" th:if="${#fields.hasErrors('surname')}" th:errors="*{surname}"></small>
+                        </div>
+                    </div>
+                    <div class="col-md-12 col-12 m-auto text-end">
+                        <button type="submit" class="btn btn-secondary rounded-pill px-md-5 px-4 py-2 radius-0 text-light light-300">Save</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+    <!-- End EDIT user -->
+	<!-- Start Footer -->
+	<div th:replace="fragments/footer :: myFooter"></div>
+    <!-- End Footer -->
+</body>
+</html>
