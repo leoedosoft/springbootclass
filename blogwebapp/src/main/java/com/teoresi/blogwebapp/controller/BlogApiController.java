@@ -1,34 +1,5 @@
 package com.teoresi.blogwebapp.controller;
 
-import java.net.URI;
-import java.text.SimpleDateFormat;
-import java.util.Date;
-
-import javax.validation.Valid;
-
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.context.MessageSource;
-import org.springframework.context.i18n.LocaleContextHolder;
-import org.springframework.http.ResponseEntity;
-import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
-import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
-import org.springframework.validation.BindingResult;
-import org.springframework.validation.FieldError;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.ResponseBody;
-import org.springframework.web.bind.annotation.RestController;
-import org.springframework.web.servlet.ModelAndView;
-import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
-
 import com.teoresi.blogwebapp.helloworld.HelloWorldBean;
 import com.teoresi.blogwebapp.model.Blog;
 import com.teoresi.blogwebapp.model.Role;
@@ -36,8 +7,27 @@ import com.teoresi.blogwebapp.model.User;
 import com.teoresi.blogwebapp.service.BlogService;
 import com.teoresi.blogwebapp.service.RoleService;
 import com.teoresi.blogwebapp.service.UserService;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.MessageSource;
+import org.springframework.context.i18n.LocaleContextHolder;
+import org.springframework.http.ResponseEntity;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
+import org.springframework.validation.FieldError;
+import org.springframework.web.bind.annotation.*;
+import org.springframework.web.servlet.ModelAndView;
+import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
+
+import javax.validation.Valid;
+import java.net.URI;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 
 @RestController
+//@RestController
 public class BlogApiController {
 
 	private static final Logger LOGGER = LoggerFactory.getLogger(BlogApiController.class);
