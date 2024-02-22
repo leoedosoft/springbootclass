@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity5">
+
+<head>
+<div th:replace="fragments/head :: myHead"></div>
+<script type="text/javascript" charset="utf8" th:src="@{/assets/js/jquery.min.js}"></script>
+<script type="text/javascript" charset="utf8" th:src="@{/assets/js/bootstrap.bundle.min.js}"></script>
+</head>
+
+<body>
+    <!-- Header -->
+    <div th:replace="fragments/header :: myHeader"></div>
+    <!-- Close Header -->
+    <!-- Start Nuovo Blog -->
+    <section class="container py-5">
+
+        <h1 class="col-12 col-xl-8 h2 text-left text-primary pt-3">[[#{blogapp.msg.blog.newBlog.title}]]</h1>
+        <p class="col-12 col-xl-8 text-left text-muted pb-5 light-300">
+            [[#{blogapp.msg.blog.newBlog.info}]]
+        </p>
+
+        <div class="row pb-4">
+            <!-- Start Contact Form -->
+            <div class="col-lg-8 ">
+                <form class="contact-form row" method="post" action="#" th:action="@{save}" th:object="${blog}" role="form">
+                
+					<!-- TITOLO POST-->
+                    <div class="col-12">
+                        <div class="form-floating mb-4">
+                            <input type="text" class="form-control form-control-lg light-300" id="idtitle" name="title" placeholder="title" th:field="*{title}">
+                            <label for="idtitle light-300">[[#{blogapp.msg.blog.newBlog.label.title}]]</label>
+                            <small class="form-text text-danger" th:if="${#fields.hasErrors('title')}" th:errors="*{title}"></small>
+                        </div>
+                    </div>
+
+					<!-- CONTENUTO TESTO POST -->
+                    <div class="col-12">
+                         <div class="form-floating mb-3	">
+	                            <textarea class="form-control light-300" rows="8" placeholder="Message" id="floatingtextarea" th:field="*{content}" name="content"></textarea>
+	                            <label for="floatingtextarea light-300">[[#{blogapp.msg.blog.newBlog.label.content}]]</label>
+	                            <small class="form-text text-danger" th:if="${#fields.hasErrors('content')}" th:errors="*{content}"></small>
+                        	</div>
+                    </div>
+                    
+                    <!-- NOME AUTORE -->
+                    <div class="col-lg-4 mb-4">
+                        <div class="form-floating mb-4">
+                            <input type="text" class="form-control form-control-lg light-300" id="floatingname" name="name" placeholder="name" th:field="*{user.name}">
+                            <label for="floatingname light-300">[[#{blogapp.msg.blog.newBlog.label.name}]]</label>
+                            <small class="form-text text-danger" th:if="${#fields.hasErrors('user.name')}" th:errors="*{user.name}"></small>
+                        </div>
+                    </div>
+                    
+                    <!-- COGNOME AUTORE -->
+                    <div class="col-lg-4 mb-4">
+                        <div class="form-floating">
+                            <input type="text" class="form-control form-control-lg light-300" id="floatingname" name="inputname" placeholder="Cognome" th:field="*{user.surname}">
+                            <label for="floatingname light-300">[[#{blogapp.msg.blog.newBlog.label.surname}]]</label>
+                            <small class="form-text text-danger" th:if="${#fields.hasErrors('user.surname')}" th:errors="*{user.surname}"></small>
+                        </div>
+                    </div>
+					<!-- EMAIL AUTORE -->
+                    <div class="col-lg-4 mb-4">
+                        <div class="form-floating">
+                            <input type="email" class="form-control form-control-lg light-300" id="floatingemail" name="email" placeholder="Email" th:field="*{user.mail}">
+                            <label for="floatingemail light-300">[[#{blogapp.msg.blog.newBlog.label.email}]]</label>
+                            <small class="form-text text-danger" th:if="${#fields.hasErrors('user.mail')}" th:errors="*{user.mail}"></small>
+                        </div>
+                    </div>
+                    <div class="col-md-12 col-12 m-auto text-end">
+                        <button type="submit" class="btn btn-secondary rounded-pill px-md-5 px-4 py-2 radius-0 text-light light-300">[[#{blogapp.msg.blog.newBlog.button.save}]]</button>
+                    </div>
+                </form>
+            </div>
+            <!-- End Contact Form -->
+        </div>
+    </section>
+    <!-- End Nuovo Blog -->
+    <!-- Start Footer -->
+	<div th:replace="fragments/footer :: myFooter"></div>
+    <!-- End Footer -->
+</body>
+</html>

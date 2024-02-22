@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>[[${titlePage}]]</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="apple-touch-icon" href="assets/img/apple-icon.png">
+    <link rel="shortcut icon" type="image/x-icon" href="assets/img/favicon.ico">
+    <!-- Load Require CSS   -->
+    <link th:href="@{/assets/css/bootstrap.min.css}" rel="stylesheet"></link>
+ 
+</head>
+<body>
+    <!-- Header -->
+    <div th:replace="fragments/header :: myHeader"></div>	
+    <!-- Close Header -->
+    <!-- Start pricing -->
+    
+    <section class="bg-white py-5">
+        <div class="container my-4">
+            <h1 class="creative-heading h2 pb-3">ERROR [[${codeError}]]: [[${blogapp.error.messages.504}]]</h1>
+        </div>
+    </section>
+    <!-- End Content -->
+   <!-- Start Footer -->
+	<div th:replace="fragments/footer :: myFooter"></div>
+    <!-- End Footer -->
+    <!-- Bootstrap -->
+    <!-- Page Script -->
+</body>
+</html>
