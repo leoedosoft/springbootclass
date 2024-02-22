@@ -1,0 +1,379 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="0eb59e27-b865-4c57-a951-ef1fb054cfc6" name="Changes" comment="jc-01 moduli user blog and jwt" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$/.." value="main" />
+      </map>
+    </option>
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="mavenHome" value="Use Maven wrapper" />
+      </MavenGeneralSettings>
+    </option>
+  </component>
+  <component name="MavenRunner">
+    <option name="skipTests" value="true" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 4
+}</component>
+  <component name="ProjectId" id="2bdEBbQBq8xErTKDzQorWtAR7pi" />
+  <component name="ProjectViewState">
+    <option name="autoscrollToSource" value="true" />
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Application.Application (1).executor": "Run",
+    "Application.Application.executor": "Run",
+    "Application.AuthJWTApplication.executor": "Run",
+    "Application.AuthServerApplication.executor": "Debug",
+    "Application.BlogDataApiApplication.executor": "Run",
+    "Application.BlogDataServiceApplication.executor": "Run",
+    "Application.BlogServiceApplication.executor": "Run",
+    "Application.BlogwebApplication.executor": "Debug",
+    "Application.UserApplication.executor": "Run",
+    "Application.UserDataServiceApplication.executor": "Run",
+    "Application.com.teoresi.webapp.Application.executor": "Run",
+    "Application.com.teoresi.webapp.UserApplication.executor": "Debug",
+    "Maven.AuthJwtService [clean].executor": "Run",
+    "Maven.AuthJwtService [install].executor": "Run",
+    "Maven.AuthServer [clean].executor": "Run",
+    "Maven.AuthServer [install].executor": "Run",
+    "Maven.BlogDataService [clean].executor": "Run",
+    "Maven.BlogDataService [install].executor": "Run",
+    "Maven.blog-data-api [clean].executor": "Run",
+    "Maven.blog-data-api [install].executor": "Run",
+    "Maven.blogdataapi [clean].executor": "Run",
+    "Maven.blogdataapi [install].executor": "Run",
+    "Maven.blogserviceoathjwt [clean].executor": "Run",
+    "Maven.gestuser-web-service [clean].executor": "Run",
+    "Maven.gestuser-web-service [install].executor": "Run",
+    "Maven.gestuser-web-service [validate].executor": "Run",
+    "Maven.jwtauthserver [clean].executor": "Run",
+    "Maven.jwtauthserver [install].executor": "Run",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "Rebasing main",
+    "jdk.selected.JAVA_MODULE": "17",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "C:/Project/workspace2/springbootclass/UserDataService/pom.xml",
+    "project.structure.last.edited": "Libraries",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2908046",
+    "settings.editor.selected.configurable": "editor.preferences.import"
+  }
+}]]></component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Project\workspace2\springbootclass\gestuser-web-service\src\main\java\com\teoresi\webapp\security" />
+      <recent name="C:\Project\workspace2\springbootclass\blog-data-api\src\main\java\com\teoresi\blogdataapi\model" />
+      <recent name="C:\Project\workspace2\springbootclass\blog-data-api\src\main\java\com\teoresi\blogdataapi\security" />
+      <recent name="C:\Project\workspace2\springbootclass\gestuser-web-service\src\main\java\com\xantrix\webapp\model" />
+      <recent name="C:\Project\workspace2\springbootclass\AuthServer\AuthServer\src\main\resources" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.teoresi.webapp.security" />
+      <recent name="com.teoresi.blogdataapi.security" />
+      <recent name="com.teoresi.webapp.repository" />
+      <recent name="com.teoresi.webapp.service" />
+      <recent name="com.xantrix.webapp.service" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Application.BlogDataServiceApplication">
+    <configuration name="AuthJWTApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.teoresi.webapp.AuthJWTApplication" />
+      <module name="AuthJwtService" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.teoresi.webapp.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="BlogDataApiApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.teoresi.blogdataapi.BlogDataApiApplication" />
+      <module name="blog-data-api" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.teoresi.blogdataapi.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="BlogDataServiceApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.teoresi.blogdataservice.BlogDataServiceApplication" />
+      <module name="BlogDataService" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.teoresi.blogdataservice.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="BlogwebApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.teoresi.blogwebapp.BlogwebApplication" />
+      <module name="blogwebapp" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.teoresi.blogwebapp.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="UserDataServiceApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.teoresi.webapp.UserDataServiceApplication" />
+      <module name="UserDataService" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.teoresi.webapp.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.UserDataServiceApplication" />
+        <item itemvalue="Application.BlogwebApplication" />
+        <item itemvalue="Application.BlogDataServiceApplication" />
+        <item itemvalue="Application.AuthJWTApplication" />
+        <item itemvalue="Application.BlogwebApplication" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="jdk-17.0.9-corretto-17.0.9-249ae16d76d6-98297cd8" />
+        <option value="jdk-18.0.2-corretto-18.0.2-249ae16d76d6-e0389a16" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="0eb59e27-b865-4c57-a951-ef1fb054cfc6" name="Changes" comment="" />
+      <created>1706536421305</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1706536421305</updated>
+    </task>
+    <task id="LOCAL-00001" summary="primo commit test">
+      <option name="closed" value="true" />
+      <created>1706536872740</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1706536872740</updated>
+    </task>
+    <task id="LOCAL-00002" summary="jc-01 situazione estabile">
+      <option name="closed" value="true" />
+      <created>1706682842987</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1706682842988</updated>
+    </task>
+    <task id="LOCAL-00003" summary="jc-01 moduli user blog and jwt">
+      <option name="closed" value="true" />
+      <created>1708600260644</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1708600260644</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
+    <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="main" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="primo commit test" />
+    <MESSAGE value="jc-01 situazione estabile" />
+    <MESSAGE value="jc-01 moduli user blog and jwt" />
+    <option name="LAST_COMMIT_MESSAGE" value="jc-01 moduli user blog and jwt" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/../BlogDataService/src/main/java/com/teoresi/blogdataservice/security/SecurityConfigOLD.java</url>
+          <line>17</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/../AuthServer/AuthServer/src/main/java/com/teoresi/authserver/AuthServer/security/UserConfig.java</url>
+          <line>8</line>
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/../AuthServer/AuthServer/src/main/java/com/teoresi/authserver/AuthServer/security/JwtTokenUtil.java</url>
+          <line>22</line>
+          <option name="timeStamp" value="3" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/teoresi/blogwebapp/security/AuthenticationFilter.java</url>
+          <line>17</line>
+          <option name="timeStamp" value="4" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/teoresi/blogwebapp/security/AuthenticationFilter.java</url>
+          <line>31</line>
+          <option name="timeStamp" value="7" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>jar://$MAVEN_REPOSITORY$/org/springframework/security/spring-security-core/5.6.1/spring-security-core-5.6.1-sources.jar!/org/springframework/security/authentication/UsernamePasswordAuthenticationToken.java</url>
+          <line>50</line>
+          <option name="timeStamp" value="8" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/teoresi/blogwebapp/service/CustomUserDetailsService.java</url>
+          <line>28</line>
+          <option name="timeStamp" value="9" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/teoresi/blogwebapp/service/CustomUserDetailsService.java</url>
+          <line>48</line>
+          <option name="timeStamp" value="10" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/teoresi/blogwebapp/security/SecurityConfig.java</url>
+          <line>83</line>
+          <option name="timeStamp" value="11" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/teoresi/blogwebapp/security/SecurityConfig.java</url>
+          <line>93</line>
+          <option name="timeStamp" value="12" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/teoresi/blogwebapp/security/SecurityConfig.java</url>
+          <line>99</line>
+          <option name="timeStamp" value="13" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/../UserDataService/src/main/java/com/teoresi/webapp/controller/HelloWorldController.java</url>
+          <line>10</line>
+          <option name="timeStamp" value="24" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/../UserDataService/src/main/java/com/teoresi/webapp/controller/HelloWorldController.java</url>
+          <line>15</line>
+          <option name="timeStamp" value="25" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/../AuthServer/src/main/java/com/teoresi/webapp/controller/JwtAuthenticationRestController.java</url>
+          <line>46</line>
+          <option name="timeStamp" value="42" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/teoresi/blogwebapp/service/CustomUserDetailsService.java</url>
+          <line>30</line>
+          <option name="timeStamp" value="43" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/../UserDataService/src/main/java/com/teoresi/webapp/controller/UtentiController.java</url>
+          <line>135</line>
+          <option name="timeStamp" value="45" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/../AuthServer/src/main/java/com/teoresi/webapp/controller/JwtAuthenticationRestController.java</url>
+          <line>49</line>
+          <option name="timeStamp" value="60" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/../BlogDataService/src/main/java/com/teoresi/blogdataservice/controller/BlogController.java</url>
+          <line>28</line>
+          <option name="timeStamp" value="71" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/../BlogDataService/src/main/java/com/teoresi/blogdataservice/BlogServiceApplication.java</url>
+          <line>12</line>
+          <option name="timeStamp" value="72" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/../UserDataService/src/main/java/com/teoresi/webapp/security/AuthEntryPoint.java</url>
+          <line>32</line>
+          <option name="timeStamp" value="74" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/../UserDataService/src/main/java/com/teoresi/webapp/security/AuthEntryPoint.java</url>
+          <line>24</line>
+          <option name="timeStamp" value="75" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+    <pin-to-top-manager>
+      <pinned-members>
+        <PinnedItemInfo parentTag="java.util.LinkedHashMap$Entry" memberName="value" />
+        <PinnedItemInfo parentTag="org.springframework.security.web.header.HeaderWriterFilter$HeaderWriterRequest" memberName="response" />
+      </pinned-members>
+    </pin-to-top-manager>
+    <watches-manager>
+      <configuration name="Application">
+        <watch expression="utente.password" />
+      </configuration>
+    </watches-manager>
+  </component>
+</project>
