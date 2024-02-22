@@ -1,0 +1,10 @@
+package com.xantrix.webapp.repository;
+
+
+import com.xantrix.webapp.model.Utenti;
+import org.springframework.data.jpa.repository.JpaRepository;
+
+public interface UtentiRepository extends JpaRepository<Utenti, String>
+{
+	public Utenti findByUserId(String UserId);
+}

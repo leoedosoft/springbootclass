@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity5">
+
+<head>
+<div th:replace="fragments/head :: myHead"></div>
+</head>
+
+<body>
+    <!-- Header -->
+    <div th:replace="fragments/header :: myHeader"></div>
+    <!-- Close Header -->
+
+    <!-- Start Login -->
+	<div class="d-flex justify-content-center vh-70" >
+		<section class="py-5">
+			<h1 class="col-12 col-xl-8 h2 text-left text-primary pt-3">[[#{blogapp.msg.login.title}]]</h1>
+			<p class="col-12 col-xl-8 text-left text-muted pb-5 light-300">
+				[[#{blogapp.msg.login.text.info}]]</p>
+			<form class="contact-form" th:action="@{/login}" method="post" role="form">
+				<div class="form-control-sm" th:if=${param.error}>
+					<div class="form-floating alert alert-danger">[[#{blogapp.msg.info.login.error}]]</div>
+				</div>
+
+				<div class="form-control-sm" th:if=${param.logout}>
+					<div class="form-floating alert alert-info">[[#{blogapp.msg.info.logout.succes}]]</div>
+				</div>
+				<!-- EMAIL (USERNAME)-->
+				<div class="mb-3 form-control-sm">
+					<div class="form-floating mb-4">
+						<input type="text" class="form-control form-control-lg light-300" id="mail" name="mail" placeholder="Inserire email" autofocus="autofocus"> <label for="light-300">Username</label>
+					</div>
+				</div>
+				<!-- PASSWORD -->
+				<div class="mb-3 form-control-sm">
+					<div class="form-floating mb-4">
+						<input type="password" class="form-control form-control-lg light-300" id="password" name="password" placeholder="Inserire password" autofocus="autofocus"> <label for="light-300">Password</label>
+					</div>
+				</div>
+				<div class="mb-3 form-control-sm">
+					<button type="submit" class="btn btn-secondary rounded-pill px-md-5 px-4 py-2 radius-0 text-light light-300">login</button>
+				</div>
+				<div class="mb-3 form-control-sm">
+					<span>Se sei nuovo utente <a th:href="@{/register}">Crea Account</a></span>
+				</div>
+			</form>
+		</section>
+	</div>
+	<!-- End Login -->
+
+    <!-- Start Footer -->
+	<div th:replace="fragments/footer :: myFooter"></div>
+    <!-- End Footer -->
+
+    <!-- Bootstrap -->
+    <script src="assets/js/bootstrap.bundle.min.js"></script>
+    <!-- Templatemo -->
+    <script src="assets/js/templatemo.js"></script>
+    <!-- Custom -->
+    <script src="assets/js/custom.js"></script>
+
+</body>
+
+</html>

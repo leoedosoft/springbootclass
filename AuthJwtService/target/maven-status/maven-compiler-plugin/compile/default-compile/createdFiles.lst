@@ -1,0 +1,13 @@
+com\teoresi\webapp\AuthJWTApplication.class
+com\teoresi\webapp\security\JwtTokenUtil.class
+com\teoresi\webapp\security\Role.class
+com\teoresi\webapp\security\User.class
+com\teoresi\webapp\security\JWTWebSecurityConfig.class
+com\teoresi\webapp\controller\JwtAuthenticationRestController.class
+com\teoresi\webapp\security\UserConfig.class
+com\teoresi\webapp\controller\AuthenticationException.class
+META-INF\spring-configuration-metadata.json
+com\teoresi\webapp\controller\HelloWorld.class
+com\teoresi\webapp\security\JwtConfig.class
+com\teoresi\webapp\security\CustomUserDetailsService.class
+com\teoresi\webapp\controller\JwtTokenRequest.class

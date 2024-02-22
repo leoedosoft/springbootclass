@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>[[${titlePage}]]</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="apple-touch-icon" href="assets/img/apple-icon.png">
+    <link rel="shortcut icon" type="image/x-icon" href="assets/img/favicon.ico">
+    <!-- Load Require CSS   -->
+    <link th:href="@{/assets/css/bootstrap.min.css}" rel="stylesheet"></link>
+    <script type="text/javascript" charset="utf8" th:src="@{/assets/js/jquery.min.js}"></script>
+	<script type="text/javascript" charset="utf8" th:src="@{/assets/js/bootstrap.bundle.min.js}"></script>
+</head>
+<body>
+    <!-- Header -->
+    <div th:replace="fragments/header :: myHeader"></div>	
+    <!-- Close Header -->
+    <!-- Start Content -->
+    <div class="container">
+        <div class="row py-4">
+        	 <p class="text-light my-lg-4 my-2">
+                 ERROR [[${codeError}]]: [[#{blogapp.error.messages.403}]]
+             </p>
+        </div>
+    </div>
+    <!-- End Content -->
+   <!-- Start Footer -->
+	<div th:replace="fragments/footer :: myFooter"></div>
+    <!-- End Footer -->
+    <!-- Bootstrap -->
+    <!-- Page Script -->
+</body>
+</html>
