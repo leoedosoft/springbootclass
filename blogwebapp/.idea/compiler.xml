@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="blogwebapp" />
+        <module name="security" />
+        <module name="UserDataService" />
+        <module name="AuthJwtService" />
+        <module name="BlogDataService" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="AuthServer" target="17" />
+      <module name="blog-data-api" target="17" />
+    </bytecodeTargetLevel>
+  </component>
+  <component name="JavacSettings">
+    <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="AuthJwtService" options="-parameters" />
+      <module name="AuthServer" options="-parameters" />
+      <module name="BlogDataService" options="-parameters" />
+      <module name="UserDataService" options="-parameters" />
+      <module name="blog-data-api" options="-parameters" />
+      <module name="blogwebapp" options="-parameters" />
+      <module name="security" options="-parameters" />
+    </option>
+  </component>
+</project>

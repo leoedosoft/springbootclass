@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity5">
+
+<head>
+<div th:replace="fragments/head :: myHead"></div>
+<script type="text/javascript" charset="utf8" th:src="@{/assets/js/jquery.min.js}"></script>
+<script type="text/javascript" charset="utf8" th:src="@{/assets/js/bootstrap.bundle.min.js}"></script>
+
+<script th:inline="javascript">
+
+
+$(document).ready(function() {
+	/*[# sec:authorize="hasRole('ROLE_MODERATOR')"]*/
+    /*[/]*/
+    /*
+		$('#idTitleInput').prop('readonly', true);
+		$('#idPublicationInput').prop('readonly', true);
+		$('#idContentTextArea').prop('readonly', true);
+		$('#idNameInput').prop('readonly', true);
+		$('#idSurnameInput').prop('readonly', true);
+		$('#idEmailInput').prop('readonly', true);
+	*/
+} );
+
+</script>
+</head>
+<body>
+    <!-- Header -->
+    <div th:replace="fragments/header :: myHeader"></div>
+    <!-- Close Header -->
+
+    <!-- Start EDIT Blog -->
+    <section class="container py-5">
+
+        <h1 class="col-12 col-xl-8 h2 text-left text-primary pt-3">[[#{blogapp.msg.blog.edit.title}]]</h1>
+           <div class="row pb-4">
+            <!-- Start Contact Form -->
+            <div class="col-lg-8 ">
+                <form class="contact-form row" method="post" action="#" th:action="@{/save}" th:object="${blog}" role="form">
+                	
+                	<!-- IDUSER NONE-->
+                	<div class="col-12 d-none">
+                        <div class="form-floating mb-4">
+                            <input type="text" class="form-control form-control-lg light-300" id="floatingsubject" name="inputsubject" placeholder="Subject" th:field="*{user.iduser}" readonly="readonly">
+                            <label for="floatingsubject light-300">IDUSER</label>
+                        </div>
+                    </div>	
+
+					<!-- ID BLOG-->
+					<div class="col-12">
+                        <div class="form-floating mb-4">
+                            <input type="text" class="form-control form-control-lg light-300" id="floatingsubject" name="inputsubject" placeholder="Subject" th:field="*{idblog}" readonly="readonly">
+                            <label for="floatingsubject light-300">ID</label>
+                        </div>
+                    </div>
+                    <!-- TITOLO -->
+                    <div class="col-12">
+                        <div class="form-floating mb-4">
+                            <input type="text" class="form-control form-control-lg light-300" id="idTitleInput" name="inputsubject" placeholder="Subject" th:field="*{title}">
+                            <label for="floatingsubject light-300">[[#{blogapp.msg.blog.edit.label.title}]]</label>
+                            <small class="form-text text-danger" th:if="${#fields.hasErrors('title')}" th:errors="*{title}"></small>
+                        </div>
+                    </div>
+					<!-- DATA PUBBLICAZIONE O CREAZIONE -->
+					<div class="col-12">
+                        <div class="form-floating mb-4">
+                            <input type="date" class="form-control form-control-lg light-300" id="idPublicationInput" name="inputsubject" placeholder="Subject" th:field="*{publicationData}">
+                            <label for="floatingsubject light-300">[[#{blogapp.msg.blog.edit.label.publicationDate}]]</label>
+                            <small class="form-text text-danger" th:if="${#fields.hasErrors('publicationData')}" th:errors="*{publicationData}"></small>
+                        </div>
+                    </div>
+                    <!-- CONTENUTO TEXT -->
+                    <div class="col-12">
+                        <div class="form-floating mb-3">
+                            <textarea class="form-control light-300" rows="8" placeholder="Message" id="idContentTextArea" th:field="*{content}"></textarea>
+                            <label for="floatingtextarea light-300">[[#{blogapp.msg.blog.edit.label.contentText}]]</label>
+                            <small class="form-text text-danger" th:if="${#fields.hasErrors('content')}" th:errors="*{content}"></small>
+                        </div>
+                    </div>
+                    
+                    <!-- NOME AUTORE -->
+                    <div class="col-lg-4 mb-4">
+                        <div class="form-floating mb-4">
+                            <input type="text" class="form-control form-control-lg light-300" id="idNameInput" name="autore" placeholder="Nome" th:field="*{user.name}">
+                            <label for="floatingname light-300">[[#{blogapp.msg.blog.edit.label.nameAuthor}]]</label>
+                            <small class="form-text text-danger" th:if="${#fields.hasErrors('user.name')}" th:errors="*{user.name}"></small>
+                        </div>
+                    </div>
+                    
+                    <!-- COGNOME AUTORE -->
+                    <div class="col-lg-4 mb-4">
+                        <div class="form-floating">
+                            <input type="text" class="form-control form-control-lg light-300" id="idSurnameInput" name="inputname" placeholder="Cognome" th:field="*{user.surname}">
+                            <label for="floatingname light-300">[[#{blogapp.msg.blog.edit.label.surnameAuthor}]]</label>
+                            <small class="form-text text-danger" th:if="${#fields.hasErrors('user.surname')}" th:errors="*{user.surname}"></small>
+                        </div>
+                    </div>
+					<!-- EMAIL AUTORE -->
+                    <div class="col-lg-4 mb-4">
+                        <div class="form-floating">
+                            <input type="email" class="form-control form-control-lg light-300" id="idEmailInput" name="email" placeholder="Email" th:field="*{user.mail}">
+                            <label for="floatingemail light-300">[[#{blogapp.msg.blog.edit.label.emailAuthor}]]</label>
+                        </div>
+                    </div>
+                    <div class="col-md-12 col-12 m-auto text-end" sec:authorize="hasAnyRole('ROLE_MODERATOR','ROLE_ADMIN')">
+                        <button type="submit" class="btn btn-secondary rounded-pill px-md-5 px-4 py-2 radius-0 text-light light-300">Save</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+    <!-- End EDIT blog -->
+	<!-- Start Footer -->
+	<div th:replace="fragments/footer :: myFooter"></div>
+    <!-- End Footer -->
+</body>
+</html>

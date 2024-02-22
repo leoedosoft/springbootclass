@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+	xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity5">
+<head>
+<div th:replace="fragments/head :: myHead"></div>
+
+<script type="text/javascript" charset="utf8" th:src="@{/assets/js/bootstrap.bundle.min.js}"></script>
+
+<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.11.4/css/jquery.dataTables.min.css">
+<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/datetime/1.1.1/css/dataTables.dateTime.min.css">
+<link rel="stylesheet" type="text/css" href="https://editor.datatables.net/extensions/Editor/css/editor.dataTables.min.css">
+
+<script type="text/javascript" charset="utf8" src="https://code.jquery.com/jquery-3.5.1.js"></script>
+<script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.11.4/js/jquery.dataTables.min.js"></script>
+<script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/datetime/1.1.1/js/dataTables.dateTime.min.js"></script>
+<script type="text/javascript" charset="utf8" src="https://editor.datatables.net/extensions/Editor/js/dataTables.editor.min.js"></script>
+
+<script th:inline="javascript">
+
+/*<![CDATA[*/
+
+var linkEdit = /*[[@{/edit/}]]*/'';
+var linkDelete = /*[[@{/delete/}]]*/'';
+var linkDetail = /*[[@{/detail/}]]*/'';
+
+var textButtonEdit = /*[[#{blogapp.msg.blog.button.edit}]]*/'';
+var textButtonDelete = /*[[#{blogapp.msg.blog.button.delete}]]*/'';
+var textButtonDetail = /*[[#{blogapp.msg.blog.button.detail}]]*/'';
+
+/*MANAGER MULTILINGUA DATATABLE*/
+var langValue = /*[[${#strings.toUpperCase(#locale)}]]*/'';
+if(langValue == "EN"){
+	langValue = "//cdn.datatables.net/plug-ins/9dcbecd42ad/i18n/English.json";
+}else{
+	langValue = "//cdn.datatables.net/plug-ins/9dcbecd42ad/i18n/Italian.json";
+}
+console.log("Value url language: "+langValue);
+/*]]>*/
+
+
+
+ 
+ 
+$(document).ready(function() {
+	
+	var table = $('#example').DataTable( {
+    	processing: true,
+        serverSide: true,
+        ajax: { url: "bloglist"},
+        columns: [	
+            { data: "title"},
+            { data: "content" },
+            { data: "publicationData" },
+            {
+            	data: null,
+            		'render': function(data, type, row, meta){ 
+            			//data = '<a role="button" class="btn btn-primary btn-sm editpipo" data-togle="modal" href="#editModal" data-id="' + row.idblog+'"><i class="bi bi-file-earmark-break" title="info"></i></a>'
+                  		//data = '<a href="#myModal" data-toggle="modal" data-target="#myModal" data-id="'+row.id+'">Info</a>'
+            			return '<a class="btn btn-info btn-md" data-toggle="modal" data-target="#myModal" data-id="'+row.idblog+'">' + 'Edit' + '</a>'; 
+                } 
+            },
+            /*[# sec:authorize="hasAnyRole('ROLE_USER','ROLE_MODERATOR','ROLE_ADMIN')"]*/
+            {
+            	data: null,  
+            		'render': function(data, type, row, meta){ 
+                     	data = '<a role="button" class="btn btn-primary btn-sm" href="' + linkDetail + row.idblog+'"><i class="bi bi-file-earmark-break"></i></a>'
+                  		return data; 
+                } 
+            },
+            /*[/]*/
+            /*[# sec:authorize="hasAnyRole('ROLE_MODERATOR','ROLE_ADMIN')"]*/
+            {
+            	data: null,  
+            		'render': function(data, type, row, meta){ 
+                     	data = '<a role="button" class="btn btn-primary btn-sm" href="' + linkEdit + row.idblog+'"><i class="bi bi-pencil-square"></i></a>'
+                  		return data; 
+                } 
+            },
+            /*[/]*/
+            /*[# sec:authorize="hasAnyRole('ROLE_ADMIN')"]*/
+            {
+            	data: null,
+            		'render': function(data, type, row, meta){ 
+	                    if(type === 'display'){
+	                    	data = '<a role="button" class="btn btn-danger btn-sm" href="' + linkDelete + row.idblog+'"><i class="bi bi-trash"></i></a>'
+	                    }  
+                   		 return data; 
+                } 
+            }
+            /*[/]*/
+           
+        ],
+        language: {
+            url:langValue
+        }
+    } );
+	
+	/*
+	
+	$('table .editpipo').on('click',function(){
+		var id = $(this).parent().find('id').val();
+		//$('#exampleModalCenter').modal('show'); 
+	})
+	*/
+	
+	$("#example").on("click", ".btn.btn-info.btn-md", function (e) {
+		e.preventDefault();
+		e.stopImmediatePropagation();
+		var idBlog = $(this).attr("data-id");
+		$('#idBlog').html('<b>'+idBlog+'</b>');
+		$("#myModal").modal('show');
+	});
+		
+	
+	
+	$("#example").on("click", ".btn.btn-secondary", function (e) {
+		e.preventDefault();
+		e.stopImmediatePropagation();
+		$('#myModal').modal('hide')
+	});
+	
+    
+} );
+
+</script>
+</head>
+<body>
+	<!-- Header -->
+	<div th:replace="fragments/header :: myHeader"></div>
+	<!-- Close Header -->
+	<!-- Start Elenco Blog-->
+	<section class="container py-5">
+		<h1 class="col-md-12 m-auto text-center py-3 pricing-header h2 semi-bold-600">[[#{blogapp.msg.blog.title.blogList}]]</h1>
+		<div class="box" sec:authorize="hasRole('ROLE_ADMIN')">
+			<a class="btn btn-primary" th:href="@{new}" role="button">[[#{blogapp.msg.blog.button.createBlog}]]</a>
+		</div>
+		<br>
+		<div class="row pb-4">
+			<div id="demo_info" class="box"></div>
+			<table id="example" class="display table-sm" style="width: 100%">
+				<thead>
+					<tr>
+						<th>[[#{blogapp.msg.blog.column.title}]]</th>
+						<th>[[#{blogapp.msg.blog.column.content}]]</th>
+						<th>[[#{blogapp.msg.blog.column.pubblicationDate}]]</th>
+						<th></th>
+						<th
+							sec:authorize="hasAnyRole('ROLE_USER','ROLE_MODERATOR','ROLE_ADMIN')"></th>
+						<th sec:authorize="hasAnyRole('ROLE_MODERATOR','ROLE_ADMIN')"></th>
+						<th sec:authorize="hasAnyRole('ROLE_ADMIN')"></th>
+					</tr>
+				</thead>
+				<tfoot>
+					<tr>
+						<th>[[#{blogapp.msg.blog.column.title}]]</th>
+						<th>[[#{blogapp.msg.blog.column.content}]]</th>
+						<th>[[#{blogapp.msg.blog.column.pubblicationDate}]]</th>
+						<th></th>
+						<th
+							sec:authorize="hasAnyRole('ROLE_USER','ROLE_MODERATOR','ROLE_ADMIN')"></th>
+						<th sec:authorize="hasAnyRole('ROLE_MODERATOR','ROLE_ADMIN')"></th>
+						<th sec:authorize="hasAnyRole('ROLE_ADMIN')"></th>
+					</tr>
+				</tfoot>
+			</table>
+		</div>
+	</section>
+	
+		
+	 <!--MODAL-->
+     <div class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-hidden="true"
+          id="myModal">
+         <div class="modal-dialog modal-lg">
+             <div class="modal-content">
+                 <div class="modal-header">
+                     <h4 class="modal-title" id="accountModalTitle">Modal title</h4>
+                     <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+                             aria-hidden="true">×</span>
+                     </button>
+                 </div>
+                 <div class="modal-body">
+                     <h4>Information</h4>
+                     <p id="idBlog"></p>
+                 </div>
+                 <div class="modal-footer" id="accountModalFooter">
+                 </div>
+             </div>
+         </div>
+     </div>
+     <!--END MODAL-->
+	<!-- End Elenco Blog-->
+	<!-- Start Footer -->
+	<div th:replace="fragments/footer :: myFooter"></div>
+	<!-- End Footer -->
+</body>
+</html>

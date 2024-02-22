@@ -1,0 +1,40 @@
+# ==============================================================
+# = Authentication Server JWT
+# ==============================================================
+spring:
+    application:
+        name: AUTH-JWT-SERVICE
+server:
+    port: 9001
+
+# ==============================================================
+# = Parametri Servizio gestUser
+# ==============================================================
+gestuser:
+  srvUrl: http://localhost:8088/user/cerca/mail/
+  mail: admin@test.com
+  password: password
+
+# ==============================================================
+# = Parametri Sicurezza JWT 
+# ==============================================================
+sicurezza:
+    uri: /auth
+    refresh: /refresh
+    header: Authorization
+    prefix: Bearer 
+    expiration: 3600
+    secret: 123_Stella
+
+# ==============================================================
+# = Livello Log di Sicurezza
+# ==============================================================  
+logging:
+  level:
+    org.springframework.security: DEBUG
+
+
+        
+
+  
+ 
