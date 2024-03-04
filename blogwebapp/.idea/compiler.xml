@@ -7,6 +7,13 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="blogwebapp" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="blogdataapi" target="17" />
+      <module name="gestuser-web-service" target="17" />
+      <module name="jwtauthserver" target="11" />
+      <module name="security" target="17" />
         <module name="security" />
         <module name="UserDataService" />
         <module name="AuthJwtService" />
@@ -20,6 +27,7 @@
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="blogwebapp" options="-parameters" />
       <module name="AuthJwtService" options="-parameters" />
       <module name="AuthServer" options="-parameters" />
       <module name="BlogDataService" options="-parameters" />

@@ -1,21 +1,14 @@
 package com.teoresi.blogdataservice.model;
 
 
-import org.springframework.format.annotation.DateTimeFormat;
-
-import jakarta.persistence.Basic;
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
-import jakarta.persistence.Temporal;
-import jakarta.persistence.TemporalType;
+import jakarta.persistence.*;
 import jakarta.validation.constraints.NotEmpty;
+import org.hibernate.annotations.GenericGenerator;
+import org.springframework.format.annotation.DateTimeFormat;
 
 import java.io.Serializable;
 import java.util.Date;
+import java.util.UUID;
 
 @Entity
 @Table(name="blog")
@@ -24,7 +17,7 @@ public class Blog implements Serializable{
 	private static final long serialVersionUID = 1L;
 
 	@Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+	@GenericGenerator(name = "uuid", strategy = "uuid4")
     @Column(name = "blogid")
     private String blogid;
 	
@@ -53,6 +46,11 @@ public class Blog implements Serializable{
 	@Column(name = "userid")
 	private String userid;
 
+
+	@PrePersist
+	public void prePersist() {
+		this.blogid = UUID.randomUUID().toString();
+	}
 
 	public Date getPublicationData() {
 		return publicationData;
