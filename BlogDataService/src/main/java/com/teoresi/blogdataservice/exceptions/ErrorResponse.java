@@ -1,35 +1,64 @@
 package com.teoresi.blogdataservice.exceptions;
 
-import java.util.Date;
+
+import java.time.LocalDate;
 
 
 public class ErrorResponse 
 {
-	private Date data = new Date();
-	private int codice;
-	private String messaggio;
+	private LocalDate date;
+	private int code;
+	private String message;
 
-	public Date getData() {
-		return data;
+	public LocalDate getDate() {
+		return date;
 	}
 
-	public void setData(Date data) {
-		this.data = data;
+	public void setDate(LocalDate date) {
+		this.date = date;
 	}
 
-	public int getCodice() {
-		return codice;
+	public int getCode() {
+		return code;
 	}
 
-	public void setCodice(int codice) {
-		this.codice = codice;
+	public void setCode(int code) {
+		this.code = code;
 	}
 
-	public String getMessaggio() {
-		return messaggio;
+	public String getMessage() {
+		return message;
 	}
 
-	public void setMessaggio(String messaggio) {
-		this.messaggio = messaggio;
+	public void setMessage(String message) {
+		this.message = message;
 	}
+
+    public static class InfoMsg
+    {
+        public LocalDate data;
+
+        public String message;
+
+        public InfoMsg(LocalDate data, String message) {
+            this.data = data;
+            this.message = message;
+        }
+
+        public LocalDate getData() {
+            return data;
+        }
+
+        public void setData(LocalDate data) {
+            this.data = data;
+        }
+
+        public String getMessage() {
+            return message;
+        }
+
+        public void setMessage(String message) {
+            this.message = message;
+        }
+    }
 }

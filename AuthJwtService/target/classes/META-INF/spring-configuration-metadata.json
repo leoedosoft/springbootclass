@@ -30,8 +30,7 @@
     {
       "name": "sicurezza.expiration",
       "type": "java.lang.Integer",
-      "sourceType": "com.teoresi.webapp.security.JwtConfig",
-      "defaultValue": 0
+      "sourceType": "com.teoresi.webapp.security.JwtConfig"
     },
     {
       "name": "sicurezza.header",

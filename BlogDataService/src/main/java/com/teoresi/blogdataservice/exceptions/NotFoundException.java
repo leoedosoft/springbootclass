@@ -2,7 +2,6 @@ package com.teoresi.blogdataservice.exceptions;
 
 public class NotFoundException  extends Exception
 {
-
 	private static final long serialVersionUID = -8729169303699924451L;
 	
 	private String messaggio = "Elemento Ricercato Non Trovato!";
@@ -12,20 +11,17 @@ public class NotFoundException  extends Exception
 		super();
 	}
 	
-	public NotFoundException(String Messaggio)
+	public NotFoundException(String messaggio)
 	{
-		super(Messaggio);
-		this.messaggio = Messaggio;
-	}
-	
-	public String getMessaggio()
-	{
-		return messaggio;
-	}
-
-	public void setMessaggio(String messaggio)
-	{
+		super(messaggio);
 		this.messaggio = messaggio;
 	}
 
+	public String getMessaggio() {
+		return messaggio;
+	}
+
+	public void setMessaggio(String messaggio) {
+		this.messaggio = messaggio;
+	}
 }
