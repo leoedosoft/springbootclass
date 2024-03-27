@@ -1,9 +1,7 @@
 package com.teoresi.webapp.controller;
 
-import java.util.Objects;
-
-import javax.servlet.http.HttpServletRequest;
-
+import com.teoresi.webapp.dto.UserDTO;
+import com.teoresi.webapp.security.JwtTokenUtil;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,13 +15,10 @@ import org.springframework.security.authentication.DisabledException;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
-import org.springframework.web.bind.annotation.ExceptionHandler;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
-import com.teoresi.webapp.security.JwtTokenUtil;
+import javax.servlet.http.HttpServletRequest;
+import java.util.Objects;
 
  
 @RestController
@@ -58,10 +53,17 @@ public class JwtAuthenticationRestController
 				.loadUserByUsername(authenticationRequest.getUsername());
 
 		final String token = jwtTokenUtil.generateToken(userDetails);
-		
+
 		logger.warn(String.format("Token %s", token));
 
-		return ResponseEntity.ok(token);
+		UserDTO userDTO = new UserDTO();
+		userDTO.setUsername(userDetails.getUsername());
+		userDTO.setAuthorities(userDetails.getAuthorities());
+		userDTO.setToken(token);
+
+		logger.warn(String.format("USERT DTO %s", userDTO));
+
+		return ResponseEntity.ok(userDTO);
 	}
 
 	@GetMapping(value = "${sicurezza.refresh}")
